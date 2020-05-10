@@ -14,4 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag jouve/pgadmin4:${GITHUB_REF:-${GITHUB_SHA}}
+      run: >
+        docker build . --file Dockerfile --tag jouve/pgadmin4:$(
+        if [ -z ${GITHUB_REF}; then echo ${GITHUB_SHA::8}; else cut -d '/' -f 3 <<< "$GITHUB_REF"; fi
+        )
