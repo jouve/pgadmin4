@@ -1,18 +1,17 @@
 name: Docker Image CI
-
 on:
   push:
-    branches: [ master ]
+    branches:
+    - master
+    tags: 
+    - '*'
   pull_request:
-    branches: [ master ]
-
+    branches:
+    - master
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag jouve/pgadmin4:$(date +%s)
+      run: docker build . --file Dockerfile --tag jouve/pgadmin4:${GITHUB_REF:-${GITHUB_SHA}}
