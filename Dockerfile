@@ -20,10 +20,9 @@ RUN set -e; \
     find -name __pycache__ | xargs rm -rf; \
     rm -rf /root/.cache /root/.local /tmp/pipenv; \
     apk del --no-cache gcc libffi-dev make musl-dev postgresql-dev python3-dev; \
-    cd /usr/libexec/postfix; \
     echo -e \
-'--- a/postfix-script\n'\
-'+++ b/postfix-script\n'\
+'--- a\n'\
+'+++ b\n'\
 '@@ -158,7 +158,7 @@\n'\
 ' 		 1) exec $daemon_directory/master -i\n'\
 ' 		    $FATAL "cannot start-fg the master daemon"\n'\
@@ -33,7 +32,7 @@ RUN set -e; \
 ' 		esac\n'\
 ' 		;;\n'\
 ' 	     *) $FATAL "start-fg does not support multi_instance_directories"' | \
-    patch -p1
+    patch /usr/libexec/postfix/postfix-script
 
 COPY service /service
 COPY entrypoint.sh /usr/bin
