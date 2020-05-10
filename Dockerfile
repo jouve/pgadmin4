@@ -3,13 +3,23 @@ FROM alpine:3.11.6
 COPY Pipfile Pipfile.lock /
 
 RUN set -e; \
-    apk add --no-cache libffi libpq postfix python3 s6 \
-    gcc libffi-dev make musl-dev postgresql-dev python3-dev; \
+    apk add --no-cache python3; \
     python3 -m venv /tmp/pipenv; \
     /tmp/pipenv/bin/pip install appdirs==1.4.3 certifi==2019.11.28 distlib==0.3.0 filelock==3.0.12 pipenv==2018.11.26 six==1.14.0 virtualenv==20.0.8 virtualenv-clone==0.5.3; \
-    /tmp/pipenv/bin/pipenv install --deploy --ignore-pipfile --system; \
+    /tmp/pipenv/bin/pipenv lock -r > requirements.txt
+
+FROM alpine:3.11.6
+
+COPY --from=0 /requirements.txt /
+
+RUN set -e; \
+    apk add --no-cache libffi libpq postfix python3 s6 \
+                       gcc libffi-dev make musl-dev postgresql-dev python3-dev; \
+    pip3 install --no-cache-dir -r requirements.txt; \
+    find /usr/lib/python3.8/site-packages/pgadmin4/docs/en_US -mindepth 1 -maxdepth 1 ! -name _build | xargs rm -rf; \
+    find -name __pycache__ | xargs rm -rf; \
     rm -rf /root/.cache /root/.local /tmp/pipenv; \
-    apk del --no-cache postgresql-dev gcc python3-dev musl-dev libffi-dev make
+    apk del --no-cache gcc libffi-dev make musl-dev postgresql-dev python3-dev
 
 COPY service /service
 COPY entrypoint.sh /usr/bin
