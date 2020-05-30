@@ -21,6 +21,6 @@ setup-apkcache /var/cache/apk
 apk add --no-cache gcc libffi-dev make musl-dev postgresql-dev python3-dev;
 python3 -m venv /tmp/venv
 /tmp/venv/bin/pip install pipenv
-/tmp/venv/bin/pip freeze
+/tmp/venv/bin/pip freeze > pipenv.txt
 /tmp/venv/bin/pipenv lock
 "
