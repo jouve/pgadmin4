@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source /usr/share/pgadmin4/bin/activate
+
 # Get the session timeout from the pgAdmin config. We'll use this (in seconds)
 # to define the Gunicorn worker timeout
 TIMEOUT=$(python3 -c 'from pgadmin4 import config; print(config.SESSION_EXPIRATION_TIME * 60 * 60 * 24)')

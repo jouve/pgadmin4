@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pgadmin4 = {file = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.21/pip/pgadmin4-4.21-py2.py3-none-any.whl"}
+pgadmin4 = {file = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.22/pip/pgadmin4-4.22-py3-none-any.whl"}
 gunicorn = "*"
 
 [requires]
