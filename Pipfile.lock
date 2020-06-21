@@ -203,11 +203,11 @@
         },
         "flask-security-too": {
             "hashes": [
-                "sha256:4e04069842d20d2776d92a24d482967240dba015220fae913348f1df455b32e3",
-                "sha256:a258e70a7a4e842978ca7b5a3a52a7490b5ff78b71a56e98152fec5677dde306"
+                "sha256:1e46d660c89e2e76af2d77e63e6cdedf22f0df0179f12429badbc1d142dda35f",
+                "sha256:b9e2da0fd741d933f78ff0008a648e4b1e6b338f85558e34cda7884476765c88"
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
-            "version": "==3.4.2"
+            "version": "==3.4.3"
         },
         "flask-sqlalchemy": {
             "hashes": [
