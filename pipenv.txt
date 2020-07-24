@@ -4,5 +4,5 @@ distlib==0.3.1
 filelock==3.0.12
 pipenv==2020.6.2
 six==1.15.0
-virtualenv==20.0.26
+virtualenv==20.0.28
 virtualenv-clone==0.5.4
