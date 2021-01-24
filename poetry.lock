@@ -1,16 +1,16 @@
 [[package]]
 name = "alembic"
-version = "1.4.3"
+version = "1.5.2"
 description = "A database migration tool for SQLAlchemy."
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 
 [package.dependencies]
 Mako = "*"
 python-dateutil = "*"
 python-editor = ">=0.3"
-SQLAlchemy = ">=1.1.0"
+SQLAlchemy = ">=1.3.0"
 
 [[package]]
 name = "babel"
@@ -87,7 +87,7 @@ test = ["pytest (>=3.6.0,!=3.9.0,!=3.9.1,!=3.9.2)", "pretend", "iso8601", "pytz"
 
 [[package]]
 name = "dnspython"
-version = "2.0.0"
+version = "2.1.0"
 description = "DNS toolkit"
 category = "main"
 optional = false
@@ -233,7 +233,7 @@ Flask = "*"
 
 [[package]]
 name = "flask-security-too"
-version = "3.4.4"
+version = "3.4.5"
 description = "Simple security for Flask apps."
 category = "main"
 optional = false
@@ -251,9 +251,9 @@ itsdangerous = ">=1.1.0"
 passlib = ">=1.7.1"
 
 [package.extras]
-all = ["Pallets-Sphinx-Themes (>=1.2.0)", "Sphinx (>=1.8.5)", "sphinx-issues (>=1.2.0)", "Flask-Mongoengine (>=0.9.5)", "peewee (>=3.11.2)", "Flask-SQLAlchemy (>=2.3)", "argon2-cffi (>=19.1.0)", "bcrypt (>=3.1.5)", "cachetools (>=3.1.0)", "check-manifest (>=0.25)", "coverage (>=4.5.4)", "cryptography (>=2.3.1)", "isort (>=4.2.2)", "mock (>=1.3.0)", "mongoengine (>=0.15.3)", "mongomock (>=3.14.0)", "msgcheck (>=2.9)", "pony (>=0.7.11)", "phonenumberslite (>=8.11.1)", "psycopg2 (>=2.8.4)", "pydocstyle (>=1.0.0)", "pymysql (>=0.9.3)", "pyqrcode (>=1.2)", "pytest (==4.6.11)", "pytest-black (>=0.3.8)", "pytest-cache (>=1.0)", "pytest-cov (>=2.5.1)", "pytest-flake8 (>=1.0.6)", "pytest-mongo (>=1.2.1)", "pytest (>=3.5.1)", "sqlalchemy (>=1.2.6)", "sqlalchemy-utils (>=0.33.0)", "werkzeug (>=0.15.5)", "zxcvbn (>=4.4.28,<4.5.0)"]
+all = ["Pallets-Sphinx-Themes (>=1.2.0)", "Sphinx (>=1.8.5)", "sphinx-issues (>=1.2.0)", "Flask-Mongoengine (>=0.9.5,<0.10.0)", "peewee (>=3.11.2)", "Flask-SQLAlchemy (>=2.3)", "argon2-cffi (>=19.1.0)", "bcrypt (>=3.1.5)", "cachetools (>=3.1.0)", "check-manifest (>=0.25)", "coverage (>=4.5.4)", "cryptography (>=2.3.1)", "isort (>=4.2.2)", "mock (>=1.3.0)", "mongoengine (>=0.19.1,<0.20.0)", "mongomock (>=3.19.0,<3.20.0)", "msgcheck (>=2.9)", "pony (>=0.7.11)", "phonenumberslite (>=8.11.1)", "psycopg2 (>=2.8.4)", "pydocstyle (>=1.0.0)", "pymysql (>=0.9.3)", "pyqrcode (>=1.2)", "pytest (==4.6.11)", "pytest-black (>=0.3.8)", "pytest-cache (>=1.0)", "pytest-cov (>=2.5.1)", "pytest-flake8 (>=1.0.6)", "pytest-mongo (>=1.2.1)", "pytest (>=3.5.1)", "sqlalchemy (>=1.2.6)", "sqlalchemy-utils (>=0.33.0)", "werkzeug (>=0.15.5)", "zxcvbn (>=4.4.28,<4.5.0)"]
 docs = ["Pallets-Sphinx-Themes (>=1.2.0)", "Sphinx (>=1.8.5)", "sphinx-issues (>=1.2.0)"]
-tests = ["Flask-Mongoengine (>=0.9.5)", "peewee (>=3.11.2)", "Flask-SQLAlchemy (>=2.3)", "argon2-cffi (>=19.1.0)", "bcrypt (>=3.1.5)", "cachetools (>=3.1.0)", "check-manifest (>=0.25)", "coverage (>=4.5.4)", "cryptography (>=2.3.1)", "isort (>=4.2.2)", "mock (>=1.3.0)", "mongoengine (>=0.15.3)", "mongomock (>=3.14.0)", "msgcheck (>=2.9)", "pony (>=0.7.11)", "phonenumberslite (>=8.11.1)", "psycopg2 (>=2.8.4)", "pydocstyle (>=1.0.0)", "pymysql (>=0.9.3)", "pyqrcode (>=1.2)", "pytest (==4.6.11)", "pytest-black (>=0.3.8)", "pytest-cache (>=1.0)", "pytest-cov (>=2.5.1)", "pytest-flake8 (>=1.0.6)", "pytest-mongo (>=1.2.1)", "pytest (>=3.5.1)", "sqlalchemy (>=1.2.6)", "sqlalchemy-utils (>=0.33.0)", "werkzeug (>=0.15.5)", "zxcvbn (>=4.4.28,<4.5.0)"]
+tests = ["Flask-Mongoengine (>=0.9.5,<0.10.0)", "peewee (>=3.11.2)", "Flask-SQLAlchemy (>=2.3)", "argon2-cffi (>=19.1.0)", "bcrypt (>=3.1.5)", "cachetools (>=3.1.0)", "check-manifest (>=0.25)", "coverage (>=4.5.4)", "cryptography (>=2.3.1)", "isort (>=4.2.2)", "mock (>=1.3.0)", "mongoengine (>=0.19.1,<0.20.0)", "mongomock (>=3.19.0,<3.20.0)", "msgcheck (>=2.9)", "pony (>=0.7.11)", "phonenumberslite (>=8.11.1)", "psycopg2 (>=2.8.4)", "pydocstyle (>=1.0.0)", "pymysql (>=0.9.3)", "pyqrcode (>=1.2)", "pytest (==4.6.11)", "pytest-black (>=0.3.8)", "pytest-cache (>=1.0)", "pytest-cov (>=2.5.1)", "pytest-flake8 (>=1.0.6)", "pytest-mongo (>=1.2.1)", "pytest (>=3.5.1)", "sqlalchemy (>=1.2.6)", "sqlalchemy-utils (>=0.33.0)", "werkzeug (>=0.15.5)", "zxcvbn (>=4.4.28,<4.5.0)"]
 
 [[package]]
 name = "flask-sqlalchemy"
@@ -337,7 +337,7 @@ pyasn1 = ">=0.4.6"
 
 [[package]]
 name = "mako"
-version = "1.1.3"
+version = "1.1.4"
 description = "A super-fast templating language that borrows the  best ideas from the existing templating languages."
 category = "main"
 optional = false
@@ -561,14 +561,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "sshtunnel"
-version = "0.3.1"
+version = "0.4.0"
 description = "Pure python SSH tunnels"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-paramiko = ">=1.15.2"
+paramiko = ">=2.7.2"
 
 [package.extras]
 build_sphinx = ["sphinx", "sphinxcontrib-napoleon"]
@@ -605,8 +605,8 @@ content-hash = "03cb1b8f40f35dee9e873b951287a79917e00d97d8ac144d8e99d3981f0e0123
 
 [metadata.files]
 alembic = [
-    {file = "alembic-1.4.3-py2.py3-none-any.whl", hash = "sha256:4e02ed2aa796bd179965041afa092c55b51fb077de19d61835673cc80672c01c"},
-    {file = "alembic-1.4.3.tar.gz", hash = "sha256:5334f32314fb2a56d86b4c4dd1ae34b08c03cae4cb888bc699942104d66bc245"},
+    {file = "alembic-1.5.2-py2.py3-none-any.whl", hash = "sha256:c057488cc8ac7c4d06025ea3907e1a4dd07af70376fa149cf6bd2bc11b43076f"},
+    {file = "alembic-1.5.2.tar.gz", hash = "sha256:a4de8d3525a95a96d59342e14b95cab5956c25b0907dce1549bb4e3e7958f4c2"},
 ]
 babel = [
     {file = "Babel-2.9.0-py2.py3-none-any.whl", hash = "sha256:9d35c22fcc79893c3ecc85ac4a56cde1ecf3f19c540bba0922308a6c06ca6fa5"},
@@ -700,8 +700,8 @@ cryptography = [
     {file = "cryptography-3.0.tar.gz", hash = "sha256:8e924dbc025206e97756e8903039662aa58aa9ba357d8e1d8fc29e3092322053"},
 ]
 dnspython = [
-    {file = "dnspython-2.0.0-py3-none-any.whl", hash = "sha256:40bb3c24b9d4ec12500f0124288a65df232a3aa749bb0c39734b782873a2544d"},
-    {file = "dnspython-2.0.0.zip", hash = "sha256:044af09374469c3a39eeea1a146e8cac27daec951f1f1f157b1962fc7cb9d1b7"},
+    {file = "dnspython-2.1.0-py3-none-any.whl", hash = "sha256:95d12f6ef0317118d2a1a6fc49aac65ffec7eb8087474158f42f26a639135216"},
+    {file = "dnspython-2.1.0.zip", hash = "sha256:e4a87f0b573201a0f3727fa18a516b055fd1107e0e5477cded4a2de497df1dd4"},
 ]
 email-validator = [
     {file = "email-validator-1.1.2.tar.gz", hash = "sha256:1a13bd6050d1db4475f13e444e169b6fe872434922d38968c67cea9568cce2f0"},
@@ -740,8 +740,8 @@ flask-principal = [
     {file = "Flask-Principal-0.4.0.tar.gz", hash = "sha256:f5d6134b5caebfdbb86f32d56d18ee44b080876a27269560a96ea35f75c99453"},
 ]
 flask-security-too = [
-    {file = "Flask-Security-Too-3.4.4.tar.gz", hash = "sha256:3c52b0e0c8453a012122aad102041fd71bd1ea025f5154bbfb1d20b4c6a4477e"},
-    {file = "Flask_Security_Too-3.4.4-py2.py3-none-any.whl", hash = "sha256:12cecf666e5e76d59e079976c1348de3158579196ec65ac47f450dc5bc0020b2"},
+    {file = "Flask-Security-Too-3.4.5.tar.gz", hash = "sha256:a09d051ed7616a99dcaa604e718792319521820e245758fe1f42f7554c538da5"},
+    {file = "Flask_Security_Too-3.4.5-py2.py3-none-any.whl", hash = "sha256:e67980297bb0e5b726b79164f9214af8548d67d3923e405cdd1a475bc53a4cc5"},
 ]
 flask-sqlalchemy = [
     {file = "Flask-SQLAlchemy-2.4.1.tar.gz", hash = "sha256:6974785d913666587949f7c2946f7001e4fa2cb2d19f4e69ead02e4b8f50b33d"},
@@ -775,8 +775,7 @@ ldap3 = [
     {file = "ldap3-2.8.1.tar.gz", hash = "sha256:37d633e20fa360c302b1263c96fe932d40622d0119f1bddcb829b03462eeeeb7"},
 ]
 mako = [
-    {file = "Mako-1.1.3-py2.py3-none-any.whl", hash = "sha256:93729a258e4ff0747c876bd9e20df1b9758028946e976324ccd2d68245c7b6a9"},
-    {file = "Mako-1.1.3.tar.gz", hash = "sha256:8195c8c1400ceb53496064314c6736719c6f25e7479cd24c77be3d9361cddc27"},
+    {file = "Mako-1.1.4.tar.gz", hash = "sha256:17831f0b7087c313c0ffae2bcbbd3c1d5ba9eeac9c38f2eb7b50e8c99fe9d5ab"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
@@ -1018,9 +1017,9 @@ sqlparse = [
     {file = "sqlparse-0.3.1.tar.gz", hash = "sha256:e162203737712307dfe78860cc56c8da8a852ab2ee33750e33aeadf38d12c548"},
 ]
 sshtunnel = [
-    {file = "sshtunnel-0.3.1-py2.py3-none-any.whl", hash = "sha256:50b8c607d5d3a7ed7b18dae80b4fa94c7aed3063c764119d06fead4ed89bf8f2"},
-    {file = "sshtunnel-0.3.1-py3.8.egg", hash = "sha256:5198140f19688b4a18eec9baad938f236b3920901f9bc45102f0aa459ce4ba19"},
-    {file = "sshtunnel-0.3.1.tar.gz", hash = "sha256:e0cac8a6a154c7a9651b42038e3f6cf35bb88c8ee4b94822b28a5b2fe7140f95"},
+    {file = "sshtunnel-0.4.0-py2.py3-none-any.whl", hash = "sha256:98e54c26f726ab8bd42b47a3a21fca5c3e60f58956f0f70de2fb8ab0046d0606"},
+    {file = "sshtunnel-0.4.0-py3.8.egg", hash = "sha256:4a07cf989712e8ba76a370584bec922d14775054b3ff18e5d075507a298dc3ed"},
+    {file = "sshtunnel-0.4.0.tar.gz", hash = "sha256:e7cb0ea774db81bf91844db22de72a40aae8f7b0f9bb9ba0f666d474ef6bf9fc"},
 ]
 werkzeug = [
     {file = "Werkzeug-1.0.1-py2.py3-none-any.whl", hash = "sha256:2de2a5db0baeae7b2d2664949077c2ac63fbd16d98da0ff71837f7d1dea3fd43"},
