@@ -1,4 +1,4 @@
-FROM alpine:3.12.1
+FROM alpine:3.13.0
 
 COPY poetry.txt /
 
@@ -15,7 +15,7 @@ WORKDIR /srv
 
 RUN /usr/share/poetry/bin/poetry export > /requirements.txt
 
-FROM alpine:3.12.1
+FROM alpine:3.13.0
 
 COPY --from=0 /requirements.txt /usr/share/pgadmin4/requirements.txt
 
@@ -24,11 +24,8 @@ RUN set -e; \
                        gcc libffi-dev make musl-dev patch postgresql-dev python3-dev; \
     python3 -m venv /usr/share/pgadmin4; \
     /usr/share/pgadmin4/bin/pip install --no-cache-dir -r /usr/share/pgadmin4/requirements.txt; \
-    echo
-RUN \
     find /usr/share/pgadmin4/lib/python3.8/site-packages/pgadmin4/docs/en_US -mindepth 1 -maxdepth 1 ! -name _build | xargs rm -rf; \
     find -name __pycache__ | xargs rm -rf; \
-    rm -rf /root/.cache /root/.local /tmp/pipenv; \
     apk del --no-cache gcc libffi-dev make musl-dev postgresql-dev python3-dev;
 
 COPY service /service

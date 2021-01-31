@@ -6,17 +6,17 @@ else
   SUDO=
 fi
 
-docker volume create apk-cache || true
-docker volume create pip-cache || true
-docker volume create poetry-cache || true
-docker volume create poetry-artifacts || true
-$SUDO docker run -i -t \
-  -v apk-cache:/var/cache/apk \
-  -v pip-cache:/root/.cache/pip \
-  -v poetry-artifacts:/root/.cache/pypoetry/artifacts \
-  -v poetry-cache:/root/.cache/pypoetry/cache \
-  -v $PWD:/srv \
-  -w /srv $(head -n1 Dockerfile | sed -n -e 's/FROM //p') sh -x -c "
+if docker container inspect cache_cache_1 &>/dev/null; then
+  cache=--volumes-from=cache_cache_1
+else
+  cache=
+fi
+
+$SUDO docker run \
+  $cache \
+  --volume $PWD:/srv \
+  --workdir /srv \
+  $(head -n1 Dockerfile | sed -n -e 's/FROM //p') sh -x -c "
 set -e
 apk add --no-cache alpine-conf
 setup-apkcache /var/cache/apk
