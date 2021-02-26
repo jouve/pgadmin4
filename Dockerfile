@@ -3,7 +3,7 @@ FROM alpine:3.13.0
 COPY poetry.txt /
 
 RUN set -e; \
-    apk add --no-cache gcc libffi-dev musl-dev openssl-dev python3-dev; \
+    apk add --no-cache cargo gcc libffi-dev musl-dev openssl-dev python3-dev; \
     python3 -m venv /usr/share/poetry; \
     /usr/share/poetry/bin/pip install -c /poetry.txt pip; \
     /usr/share/poetry/bin/pip install -c /poetry.txt wheel; \
@@ -21,12 +21,12 @@ COPY --from=0 /requirements.txt /usr/share/pgadmin4/requirements.txt
 
 RUN set -e; \
     apk add --no-cache libffi libpq python3 s6 ssmtp \
-                       gcc libffi-dev make musl-dev patch postgresql-dev python3-dev; \
+                       cargo gcc g++ krb5-dev libffi-dev make musl-dev postgresql-dev python3-dev; \
     python3 -m venv /usr/share/pgadmin4; \
     /usr/share/pgadmin4/bin/pip install --no-cache-dir -r /usr/share/pgadmin4/requirements.txt; \
     find /usr/share/pgadmin4/lib/python3.8/site-packages/pgadmin4/docs/en_US -mindepth 1 -maxdepth 1 ! -name _build | xargs rm -rf; \
     find -name __pycache__ | xargs rm -rf; \
-    apk del --no-cache gcc libffi-dev make musl-dev postgresql-dev python3-dev;
+    apk del --no-cache cargo gcc g++ krb5-dev libffi-dev make musl-dev postgresql-dev python3-dev;
 
 COPY service /service
 COPY entrypoint.sh /usr/bin

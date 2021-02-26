@@ -20,7 +20,7 @@ $SUDO docker run \
 set -e
 apk add --no-cache alpine-conf
 setup-apkcache /var/cache/apk
-apk add --no-cache gcc libffi-dev musl-dev openssl-dev python3-dev;
+apk add --no-cache cargo gcc libffi-dev musl-dev openssl-dev python3-dev;
 python3 -m venv /usr/share/poetry
 /usr/share/poetry/bin/pip install --upgrade pip
 /usr/share/poetry/bin/pip install wheel
@@ -28,6 +28,6 @@ python3 -m venv /usr/share/poetry
 /usr/share/poetry/bin/pip freeze --all > poetry.txt
 /usr/share/poetry/bin/poetry lock
 apk add --no-cache libffi libpq postfix python3 s6 \
-                   gcc libffi-dev make musl-dev patch postgresql-dev python3-dev;
+                   gcc g++ krb5-dev libffi-dev make musl-dev patch postgresql-dev python3-dev;
 /usr/share/poetry/bin/poetry install
 "
