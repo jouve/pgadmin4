@@ -1,13 +1,11 @@
-FROM alpine:3.13.0
+FROM alpine:3.13.2
 
 COPY poetry.txt /
 
 RUN set -e; \
-    apk add --no-cache cargo gcc libffi-dev musl-dev openssl-dev python3-dev; \
+    apk add --no-cache python3; \
     python3 -m venv /usr/share/poetry; \
-    /usr/share/poetry/bin/pip install -c /poetry.txt pip; \
-    /usr/share/poetry/bin/pip install -c /poetry.txt wheel; \
-    /usr/share/poetry/bin/pip install -c /poetry.txt poetry
+    /usr/share/poetry/bin/pip install --index-url http://192.168.0.28:3141/cyril/dev --trusted-host 192.168.0.28 -r /poetry.txt
 
 COPY pyproject.toml poetry.lock /srv/
 
@@ -15,23 +13,22 @@ WORKDIR /srv
 
 RUN /usr/share/poetry/bin/poetry export > /requirements.txt
 
-FROM alpine:3.13.0
+FROM alpine:3.13.2
 
 COPY --from=0 /requirements.txt /usr/share/pgadmin4/requirements.txt
 
 RUN set -e; \
-    apk add --no-cache libffi libpq python3 s6 ssmtp \
-                       cargo gcc g++ krb5-dev libffi-dev make musl-dev postgresql-dev python3-dev; \
-    python3 -m venv /usr/share/pgadmin4; \
-    /usr/share/pgadmin4/bin/pip install --no-cache-dir -r /usr/share/pgadmin4/requirements.txt; \
+    apk add --no-cache libpq libstdc++ python3 s6 ssmtp; \
+    python3 -m venv /usr/share/pgadmin4
+RUN set -e; \
+    /usr/share/pgadmin4/bin/pip install --index-url http://192.168.0.28:3141/cyril/dev --trusted-host 192.168.0.28 --no-cache-dir -r /usr/share/pgadmin4/requirements.txt; \
     find /usr/share/pgadmin4/lib/python3.8/site-packages/pgadmin4/docs/en_US -mindepth 1 -maxdepth 1 ! -name _build | xargs rm -rf; \
-    find -name __pycache__ | xargs rm -rf; \
-    apk del --no-cache cargo gcc g++ krb5-dev libffi-dev make musl-dev postgresql-dev python3-dev;
+    find -name __pycache__ | xargs rm -rf
 
-COPY service /service
 COPY entrypoint.sh /usr/bin
 
 EXPOSE 80
+EXPOSE 443
 VOLUME /var/lib/pgadmin
 
 CMD ["entrypoint.sh"]

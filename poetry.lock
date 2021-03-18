@@ -1,6 +1,6 @@
 [[package]]
 name = "alembic"
-version = "1.5.5"
+version = "1.5.7"
 description = "A database migration tool for SQLAlchemy."
 category = "main"
 optional = false
@@ -291,7 +291,7 @@ tests = ["Flask-Mongoengine (>=0.9.5,<0.10.0)", "peewee (>=3.11.2)", "Flask-SQLA
 
 [[package]]
 name = "flask-sqlalchemy"
-version = "2.4.4"
+version = "2.5.1"
 description = "Adds SQLAlchemy support to your Flask application."
 category = "main"
 optional = false
@@ -681,12 +681,13 @@ locale = ["Babel (>=1.3)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "~3.8"
-content-hash = "03cb1b8f40f35dee9e873b951287a79917e00d97d8ac144d8e99d3981f0e0123"
+python-versions = ">=3.8"
+content-hash = "fef80a777d3f4aee722f28bc65f579b31bc256c39746bedb45b3d1bc82809e8a"
 
 [metadata.files]
 alembic = [
-    {file = "alembic-1.5.5.tar.gz", hash = "sha256:df0028c19275a2cff137e39617a39cdcdbd1173733b87b6bfa257b7c0860213b"},
+    {file = "alembic-1.5.7-py2.py3-none-any.whl", hash = "sha256:f33d561f3ce2ca390f1c87ff3849cd7d97bb93bae9c91357727263498e10028f"},
+    {file = "alembic-1.5.7.tar.gz", hash = "sha256:66bbb0e7d6277b007dfe7e27237093c79b76cf4f94e6fbd0f7af6f9409546fe6"},
 ]
 babel = [
     {file = "Babel-2.9.0-py2.py3-none-any.whl", hash = "sha256:9d35c22fcc79893c3ecc85ac4a56cde1ecf3f19c540bba0922308a6c06ca6fa5"},
@@ -849,8 +850,8 @@ flask-security-too = [
     {file = "Flask_Security_Too-3.4.5-py2.py3-none-any.whl", hash = "sha256:e67980297bb0e5b726b79164f9214af8548d67d3923e405cdd1a475bc53a4cc5"},
 ]
 flask-sqlalchemy = [
-    {file = "Flask-SQLAlchemy-2.4.4.tar.gz", hash = "sha256:bfc7150eaf809b1c283879302f04c42791136060c6eeb12c0c6674fb1291fae5"},
-    {file = "Flask_SQLAlchemy-2.4.4-py2.py3-none-any.whl", hash = "sha256:05b31d2034dd3f2a685cbbae4cfc4ed906b2a733cff7964ada450fd5e462b84e"},
+    {file = "Flask-SQLAlchemy-2.5.1.tar.gz", hash = "sha256:2bda44b43e7cacb15d4e05ff3cc1f8bc97936cc464623424102bfc2c35e95912"},
+    {file = "Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl", hash = "sha256:f12c3d4cc5cc7fdcc148b9527ea05671718c3ea45d50c7e732cceb33f574b390"},
 ]
 flask-wtf = [
     {file = "Flask-WTF-0.14.3.tar.gz", hash = "sha256:d417e3a0008b5ba583da1763e4db0f55a1269d9dd91dcc3eb3c026d3c5dbd720"},
