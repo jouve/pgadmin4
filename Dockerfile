@@ -14,6 +14,7 @@ RUN set -e; \
     apk add --no-cache --virtual .build-deps \
         cargo \
         gcc \
+	g++ \
         libffi-dev \
         make \
         musl-dev \
