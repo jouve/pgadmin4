@@ -21,19 +21,18 @@ RUN set -e; \
         openssl-dev \
         postgresql-dev \
         python3-dev \
-        s6 \
         ssmtp \
     ; \
     python3 -m venv /usr/share/pgadmin4; \
     /usr/share/pgadmin4/bin/pip install -r /usr/share/pgadmin4/requirements.txt; \
     find /usr/share/pgadmin4/lib/python3.8/site-packages/pgadmin4/docs/en_US -mindepth 1 -maxdepth 1 ! -name _build | xargs rm -rf; \
-    apk add --no-network --virtual .run-deps $( \
-        scanelf --needed --nobanner --format '%n#p' --recursive /usr/share/poetry \
+    apk add --no-cache --virtual .run-deps postgresql-client python3 $( \
+        scanelf --needed --nobanner --format '%n#p' --recursive /usr/share/pgadmin4 \
         | tr ',' '\n' \
         | sed 's/^/so:/' \
         | sort -u \
     ); \
-    apk del --no-cache --no-network .build-deps; \
+    apk del --no-cache .build-deps; \
     rm -rf /root/.cache /root/.cargo
 
 COPY entrypoint.sh /usr/bin
