@@ -16,4 +16,4 @@ $SUDO docker run \
   $cache \
   --volume $PWD:/srv \
   --workdir /srv \
-  jouve/poetry:1.1.6-alpine3.13.5 sh -x -c 'poetry lock'
+  $(sed -n -e '/FROM /{s/FROM //; p; q }' Dockerfile | head -n1) sh -x -c 'poetry lock'
