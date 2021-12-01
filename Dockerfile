@@ -1,4 +1,4 @@
-FROM jouve/poetry:1.1.10-alpine3.14.2
+FROM jouve/poetry:1.1.12-alpine3.15.0
 
 COPY pyproject.toml poetry.lock /srv/
 
@@ -6,7 +6,7 @@ WORKDIR /srv
 
 RUN poetry export --without-hashes > /requirements.txt
 
-FROM alpine:3.14.2
+FROM alpine:3.15.0
 
 COPY --from=0 /requirements.txt /usr/share/pgadmin4/requirements.txt
 
