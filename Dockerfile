@@ -15,15 +15,17 @@ RUN set -e; \
         gcc \
         g++ \
         libffi-dev \
+        jpeg-dev \
         make \
         musl-dev \
         postgresql-dev \
         python3-dev \
         ssmtp \
+        zlib-dev \
     ; \
     python3 -m venv /usr/share/pgadmin4; \
-    /usr/share/pgadmin4/bin/pip install pip==21.2.4 wheel==0.37.0; \
-    /usr/share/pgadmin4/bin/pip install -r /usr/share/pgadmin4/requirements.txt; \
+    /usr/share/pgadmin4/bin/pip install --no-cache pip==21.3.1 setuptools==60.3.1 wheel==0.37.1; \
+    /usr/share/pgadmin4/bin/pip install --no-cache -r /usr/share/pgadmin4/requirements.txt; \
     find /usr/share/pgadmin4/lib/python3.8/site-packages/pgadmin4/docs/en_US -mindepth 1 -maxdepth 1 ! -name _build | xargs rm -rf; \
     apk add --no-cache --virtual .run-deps postgresql-client python3 $( \
         scanelf --needed --nobanner --format '%n#p' --recursive /usr/share/pgadmin4 \
@@ -32,8 +34,7 @@ RUN set -e; \
         | sort -u \
         | grep -v libgcc_s \
     ); \
-    apk del --no-cache .build-deps; \
-    rm -rf /root/.cache /root/.cargo
+    apk del --no-cache .build-deps;
 
 COPY entrypoint.sh /usr/bin
 
