@@ -1,6 +1,6 @@
 [[package]]
 name = "alembic"
-version = "1.7.5"
+version = "1.7.6"
 description = "A database migration tool for SQLAlchemy."
 category = "main"
 optional = false
@@ -502,7 +502,7 @@ totp = ["cryptography"]
 
 [[package]]
 name = "pgadmin4"
-version = "6.4"
+version = "6.5"
 description = "PostgreSQL Tools"
 category = "main"
 optional = false
@@ -820,7 +820,7 @@ ua-parser = ">=0.10.0"
 
 [[package]]
 name = "werkzeug"
-version = "2.0.2"
+version = "2.0.3"
 description = "The comprehensive WSGI web application library."
 category = "main"
 optional = false
@@ -850,8 +850,8 @@ content-hash = "443d4e9b778feba03e24b67953f07a8bb76e1da7cd4a10500d96f505ee3da5f8
 
 [metadata.files]
 alembic = [
-    {file = "alembic-1.7.5-py3-none-any.whl", hash = "sha256:a9dde941534e3d7573d9644e8ea62a2953541e27bc1793e166f60b777ae098b4"},
-    {file = "alembic-1.7.5.tar.gz", hash = "sha256:7c328694a2e68f03ee971e63c3bd885846470373a5b532cf2c9f1601c413b153"},
+    {file = "alembic-1.7.6-py3-none-any.whl", hash = "sha256:ad842f2c3ab5c5d4861232730779c05e33db4ba880a08b85eb505e87c01095bc"},
+    {file = "alembic-1.7.6.tar.gz", hash = "sha256:6c0c05e9768a896d804387e20b299880fe01bc56484246b0dffe8075d6d3d847"},
 ]
 authlib = [
     {file = "Authlib-0.15.5-py2.py3-none-any.whl", hash = "sha256:ecf4a7a9f2508c0bb07e93a752dd3c495cfaffc20e864ef0ffc95e3f40d2abaf"},
@@ -1262,7 +1262,7 @@ passlib = [
     {file = "passlib-1.7.4.tar.gz", hash = "sha256:defd50f72b65c5402ab2c573830a6978e5f202ad0d984793c8dde2c4152ebe04"},
 ]
 pgadmin4 = [
-    {file = "pgadmin4-6.4-py3-none-any.whl", hash = "sha256:9a043fc089986a661c2fcfdf155c4cc869f528887b3a7e6bd4c0e6f11d14775e"},
+    {file = "pgadmin4-6.5-py3-none-any.whl", hash = "sha256:570a69c7671012d9ea624f0f482ca742bbf2ebbbccb5f937e1dea9d900945342"},
 ]
 pillow = [
     {file = "Pillow-8.3.2-cp310-cp310-macosx_10_10_universal2.whl", hash = "sha256:c691b26283c3a31594683217d746f1dad59a7ae1d4cfc24626d7a064a11197d4"},
@@ -1608,8 +1608,8 @@ user-agents = [
     {file = "user_agents-2.2.0-py3-none-any.whl", hash = "sha256:a98c4dc72ecbc64812c4534108806fb0a0b3a11ec3fd1eafe807cee5b0a942e7"},
 ]
 werkzeug = [
-    {file = "Werkzeug-2.0.2-py3-none-any.whl", hash = "sha256:63d3dc1cf60e7b7e35e97fa9861f7397283b75d765afcaefd993d6046899de8f"},
-    {file = "Werkzeug-2.0.2.tar.gz", hash = "sha256:aa2bb6fc8dee8d6c504c0ac1e7f5f7dc5810a9903e793b6f715a9f015bdadb9a"},
+    {file = "Werkzeug-2.0.3-py3-none-any.whl", hash = "sha256:1421ebfc7648a39a5c58c601b154165d05cf47a3cd0ccb70857cbdacf6c8f2b8"},
+    {file = "Werkzeug-2.0.3.tar.gz", hash = "sha256:b863f8ff057c522164b6067c9e28b041161b4be5ba4d0daceeaa50a163822d3c"},
 ]
 wtforms = [
     {file = "WTForms-3.0.1-py3-none-any.whl", hash = "sha256:837f2f0e0ca79481b92884962b914eba4e72b7a2daaf1f939c890ed0124b834b"},
