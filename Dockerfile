@@ -1,4 +1,4 @@
-FROM jouve/poetry:1.1.12-alpine3.15.0
+FROM jouve/poetry:1.1.13-alpine3.15.1
 
 COPY pyproject.toml poetry.lock /srv/
 
